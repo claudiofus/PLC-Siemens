@@ -1,0 +1,27 @@
+DB2:
+				STRUCT		
+TEMPI_01		S5TIME		S5T#1S300MS		Ritardo scarico prodotto
+TEMPI_02		S5TIME		S5T#3S200MS		Tempo di saldatura longitudinale
+TEMPI_03		S5TIME		S5T#2S200MS		Tempo di saldatura trasver.
+TEMPI_04		S5TIME		S5T#1S			
+TEMPI_05		S5TIME		S5T#10S			Tempo soffio aria
+TEMPI_06		S5TIME		S5T#1S 			Ritardo avvio svolgitore film
+TEMPI_07		S5TIME		S5T#10M			Timeout centralina idraulica
+TEMPI_08		S5TIME		S5T#15S			Timeout pressa orizzontale
+TEMPI_09		S5TIME		S5T#10S			Timeout pressa verticale
+TEMPI_10		S5TIME		S5T#2S 			Timeout portine
+TEMPI_11		S5TIME		S5T#10S			Timeout ghigliottina orizzontale
+TEMPI_12		S5TIME		S5T#5S 			Timeout ghigliottina verticale
+TEMPI_13		S5TIME		S5T#10S			Timeout foratore verticale
+TEMPI_14		S5TIME		S5T#30S			Timeout saldante longitudinale
+TEMPI_15		S5TIME		S5T#30S			Timeout pressino trasversale
+TEMPI_16		S5TIME		S5T#4S 			Timeout foratori laterali
+TEMPI_17		S5TIME		S5T#5S 			Timeout espulsore balla
+TEMPI_18		S5TIME		S5T#5M 			Timeout nastro esterno
+TEMPI_19		S5TIME		S5T#0MS			Riservato
+TEMPI_20		S5TIME		S5T#0MS			Ritardo uscita foratori laterali
+TEMPI_21		S5TIME		S5T#0MS			Ritardo rientro foratori laterali
+TEMPI_22		S5TIME		S5T#0MS			Ritardo taglio film
+TEMPI_23		S5TIME		S5T#0MS			
+TEMPI_24		S5TIME		S5T#0MS			
+TEMPI_25		S5TIME		S5T#0MS			

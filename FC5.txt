@@ -1,0 +1,72 @@
+FC5:
+Segmento 1: RESET CICLO
+	0	0	0	0	0	M40.0	M      40.0	BOOL	SEQ. SALD. TRASV. / Verifica richiesta di saldatura T (<-)
+	0	0	0	0	0	M45.0	M      45.0	BOOL	FINE SALDATURA TRASV.
+	0	0	0	0	0	M100.3	M     100.3	BOOL	RESET Ciclo
+	0	0	0	0	0	MB40	MB     40	BYTE	SEQUENZE SALDATURA TRASV.
+
+Segmento 2: SEQ. SALD. TRASV. / Verifica richiesta di saldatura T (<-)
+	0	0	0	0	0	M15.2	M      15.2	BOOL	RICHIESTA SALDATURA TRASVERSALE
+	0	0	0	0	0	M40.0	M      40.0	BOOL	SEQ. SALD. TRASV. / Verifica richiesta di saldatura T (<-)
+	0	0	0	0	0	M40.1	M      40.1	BOOL	SEQ. SALD. TRASV. / Attiva pressino trasver.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 3: SEQ. SALD. TRASV. / Attiva pressino trasver.
+	0	0	0	0	0	E2.1	E       2.1	BOOL	Pressino trasversale sup. - Pressatura
+	0	0	0	0	0	E2.3	E       2.3	BOOL	Pressino trasversale inf. - Pressatura
+	0	0	0	0	0	M1.1	M       1.1	BOOL	Sempre ON
+	0	0	0	0	0	M40.1	M      40.1	BOOL	SEQ. SALD. TRASV. / Attiva pressino trasver.
+	0	0	0	0	0	M40.2	M      40.2	BOOL	SEQ. SALD. TRASV. / Taglio film e saldatura trasv.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T22	T      22	TIMER	Tempo di ritardo taglio film
+
+Segmento 4: SEQ. SALD. TRASV. / Taglio film e saldatura trasv.
+	0	0	0	0	0	M40.2	M      40.2	BOOL	SEQ. SALD. TRASV. / Taglio film e saldatura trasv.
+	0	0	0	0	0	M40.3	M      40.3	BOOL	SEQ. SALD. TRASV. / Passo libero
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T4	T       4	TIMER	Tempo di saldatura trasver.
+
+Segmento 5: SEQ. SALD. TRASV. / Attesa saldatura trasver.
+	0	0	0	0	0	M40.3	M      40.3	BOOL	SEQ. SALD. TRASV. / Passo libero
+	0	0	0	0	0	M40.4	M      40.4	BOOL	SEQ. SALD. TRASV. / Disattiva pressino trasversale
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 6: SEQ. SALD. TRASV. / Disattiva saldante trasversale
+	0	0	0	0	0	E2.2	E       2.2	BOOL	Pressino trasversale sup. - Riposo
+	0	0	0	0	0	E2.4	E       2.4	BOOL	Pressino trasversale inf. - Riposo
+	0	0	0	0	0	M40.4	M      40.4	BOOL	SEQ. SALD. TRASV. / Disattiva pressino trasversale
+	0	0	0	0	0	M40.5	M      40.5	BOOL	SEQ. SALD. TRASV. / Attiva soffio
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 7: SEQ. SALD. TRASV. / Attiva soffio
+	0	0	0	0	0	M40.5	M      40.5	BOOL	SEQ. SALD. TRASV. / Attiva soffio
+	0	0	0	0	0	M40.6	M      40.6	BOOL	SEQ. SALD. TRASV. / Fine saldatura trasversale (->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T5	T       5	TIMER	Tempo soffio aria
+
+Segmento 8: FINE SALDATURA TRASV.
+	0	0	0	0	0	M40.0	M      40.0	BOOL	SEQ. SALD. TRASV. / Verifica richiesta di saldatura T (<-)
+	0	0	0	0	0	M40.6	M      40.6	BOOL	SEQ. SALD. TRASV. / Fine saldatura trasversale (->)
+	0	0	0	0	0	M45.0	M      45.0	BOOL	FINE SALDATURA TRASV.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 9: 
+
+Segmento 10: Tempo di ritardo taglio film
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	E2.2	E       2.2	BOOL	Pressino trasversale sup. - Riposo
+	0	0	0	0	0	E2.4	E       2.4	BOOL	Pressino trasversale inf. - Riposo
+	0	0	0	0	0	M40.1	M      40.1	BOOL	SEQ. SALD. TRASV. / Attiva pressino trasver.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T22	T      22	TIMER	Tempo di ritardo taglio film
+
+Segmento 11: Tempo di saldatura trasver.
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	M40.2	M      40.2	BOOL	SEQ. SALD. TRASV. / Taglio film e saldatura trasv.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T4	T       4	TIMER	Tempo di saldatura trasver.
+
+Segmento 12: Tempo soffio aria
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	M40.5	M      40.5	BOOL	SEQ. SALD. TRASV. / Attiva soffio
+	0	0	0	0	0	T5	T       5	TIMER	Tempo soffio aria

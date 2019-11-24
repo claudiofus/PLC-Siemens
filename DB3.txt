@@ -1,0 +1,20 @@
+DB3:
+						STRUCT		
+PARAM_01				INT				2			Impulsi minimo ballerino
+PARAM_02				INT				0
+PARAM_03				INT				0
+PARAM_04				INT				0
+PARAM_05				INT				0
+PARAM_06				INT				0
+PARAM_07				INT				0
+PARAM_08				INT				0
+PARAM_09				INT				0
+PARAM_10				INT				0
+PARAM_11_bit_0			BOOL			TRUE		Abilita - Allarme rottura o fine film
+PARAM_11_bit_1			BOOL			FALSE
+PARAM_11_bit_2			BOOL			FALSE
+PARAM_11_bit_3			BOOL			FALSE
+PARAM_11_bit_4			BOOL			FALSE
+PARAM_11_bit_5			BOOL			FALSE
+PARAM_11_bit_6			BOOL			FALSE
+PARAM_11_bit_7			BOOL			FALSE

@@ -1,0 +1,29 @@
+DB2.DBW    0	"TEMPI".TEMPI_01	Ritardo scarico prodotto	TEMPO SIMATIC		
+DB2.DBW    2	"TEMPI".TEMPI_02	Tempo di saldatura longitudinale	TEMPO SIMATIC		
+DB2.DBW    4	"TEMPI".TEMPI_03	Tempo di saldatura trasver.	TEMPO SIMATIC		
+DB2.DBW    6	"TEMPI".TEMPI_04		TEMPO SIMATIC		
+DB2.DBW    8	"TEMPI".TEMPI_05	Tempo soffio aria	TEMPO SIMATIC		
+DB2.DBW   10	"TEMPI".TEMPI_06	Ritardo avvio svolgitore film	TEMPO SIMATIC		
+DB2.DBW   12	"TEMPI".TEMPI_07	Timeout centralina idraulica	TEMPO SIMATIC		
+DB2.DBW   14	"TEMPI".TEMPI_08	Timeout pressa orizzontale	TEMPO SIMATIC		
+DB2.DBW   16	"TEMPI".TEMPI_09	Timeout pressa verticale	TEMPO SIMATIC		
+DB2.DBW   18	"TEMPI".TEMPI_010	Timeout portine	TEMPO SIMATIC		
+DB2.DBW   20	"TEMPI".TEMPI_011	Timeout ghigliottina orizzontale	TEMPO SIMATIC		
+DB2.DBW   22	"TEMPI".TEMPI_012	Timeout ghigliottina verticale	TEMPO SIMATIC		
+DB2.DBW   24	"TEMPI".TEMPI_013	Timeout foratore verticale	TEMPO SIMATIC		
+DB2.DBW   26	"TEMPI".TEMPI_014	Timeout saldante longitudinale	TEMPO SIMATIC		
+DB2.DBW   28	"TEMPI".TEMPI_015	Timeout pressino trasversale	TEMPO SIMATIC		
+DB2.DBW   30	"TEMPI".TEMPI_016	Timeout foratori laterali	TEMPO SIMATIC		
+DB2.DBW   32	"TEMPI".TEMPI_017	Timeout espulsore balla	TEMPO SIMATIC		
+DB2.DBW   34	"TEMPI".TEMPI_018	Timeout nastro esterno	TEMPO SIMATIC		
+DB2.DBW   36	"TEMPI".TEMPI_019	Riservato	TEMPO SIMATIC		
+DB2.DBW   38	"TEMPI".TEMPI_020	Ritardo uscita foratori laterali	TEMPO SIMATIC		
+DB2.DBW   40	"TEMPI".TEMPI_021	Ritardo rientro foratori laterali	TEMPO SIMATIC		
+DB2.DBW   42	"TEMPI".TEMPI_022	Ritardo taglio film	TEMPO SIMATIC		
+					
+					
+					
+DB3.DBW    0	"PARAMETRI".PARAM_01	Impulsi minimo ballerino	DEC		
+DB3.DBX   20.0	"PARAMETRI".PARAM_11_bit_0	Abilita - Allarme rottura o fine film	BOOL		
+					
+T      7	"T7"	Timeout centralina idraulica	TEMPO SIMATIC		

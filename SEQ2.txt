@@ -1,0 +1,30 @@
+M     20.0	"M20.0"	SEQ. RIEMP. VASCA / Verifica richiesta riempimento prodotto (<-)	BOOL		
+M     20.1	"M20.1"	SEQ. RIEMP. VASCA / Verifica portine chiuse	BOOL		
+M     20.2	"M20.2"	SEQ. RIEMP. VASCA / Abilitazione nastro esterno	BOOL		
+M     20.3	"M20.3"	SEQ. RIEMP. VASCA / Attesa riempimento vasca	BOOL		
+M     20.4	"M20.4"	SEQ. RIEMP. VASCA / Prodotto pronto (->)	BOOL		
+M     20.5	"M20.5"	SEQ. RIEMP. VASCA / Passo libero	BOOL		
+M     20.6	"M20.6"	SEQ. RIEMP. VASCA / Passo libero	BOOL		
+M     20.7	"M20.7"	SEQ. RIEMP. VASCA / Passo libero	BOOL		
+					
+M     30.0	"M30.0"	SEQ. SALD. LONG. / Verifica richiesta di saldatura L (<-)	BOOL		
+M     30.1	"M30.1"	SEQ. SALD. LONG. / Attiva saldante longitudinale	BOOL		
+M     30.2	"M30.2"	SEQ. SALD. LONG. / Attesa saldatura longitudinale	BOOL		
+M     30.3	"M30.3"	SEQ. SALD. LONG. / Disattiva saldante longitudinale	BOOL		
+M     30.4	"M30.4"	SEQ. SALD. LONG. / Fine saldatura longitudinale(->)	BOOL		
+M     30.5	"M30.5"	SEQ. SALD. LONG. / Passo libero	BOOL		
+M     30.6	"M30.6"	SEQ. SALD. LONG. / Passo libero	BOOL		
+M     30.7	"M30.7"	SEQ. SALD. LONG. / Passo libero	BOOL		
+					
+M     40.0	"M40.0"	SEQ. SALD. TRASV. / Verifica richiesta di saldatura T (<-)	BOOL		
+M     40.1	"M40.1"	SEQ. SALD. TRASV. / Attiva pressino trasver.	BOOL		
+M     40.2	"M40.2"	SEQ. SALD. TRASV. / Taglio film e saldatura trasv.	BOOL		
+M     40.3	"M40.3"	SEQ. SALD. TRASV. / Passo libero	BOOL		
+M     40.4	"M40.4"	SEQ. SALD. TRASV. / Disattiva pressino trasversale	BOOL		
+M     40.5	"M40.5"	SEQ. SALD. TRASV. / Attiva soffio	BOOL		
+M     40.6	"M40.6"	SEQ. SALD. TRASV. / Fine saldatura trasversale (->)	BOOL		
+M     40.7	"M40.7"	SEQ. SALD. TRASV. / Passo libero	BOOL		
+					
+M     50.0	"M50.0"	SEQ. ESP. BALLA / Verifica richiesta espulsione balla (<-)	BOOL		
+M     50.1	"M50.1"	SEQ. ESP. BALLA / Uscita espulsore balla	BOOL		
+M     50.2	"M50.2"	SEQ. ESP. BALLA / Rientro espulsore balla	BOOL		

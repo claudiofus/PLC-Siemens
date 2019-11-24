@@ -1,0 +1,40 @@
+FC6:
+Segmento 1: Timeout centralina idraulica
+	0	0	0	0	0	A8.0	A       8.0	BOOL	Motore centralina idraulica
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	E3.7	E       3.7	BOOL	Selettore Automatico
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T7	T       7	TIMER	Timeout centralina idraulica
+
+Segmento 2: HMI - Segnalazioni - Centralina idr. avviata
+	0	0	0	0	0	A8.0	A       8.0	BOOL	Motore centralina idraulica
+	0	0	0	0	0	PLC -> HMI	DB     11	DB     11	Segnali da PLC a pannello operatore
+
+Segmento 3: 
+Segmento 4: Ritardo avvio svolgitore film
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	E3.3	E       3.3	BOOL	Ballerino a riposo
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T6	T       6	TIMER	Ritardo avvio svolgitore film
+
+Segmento 5: 
+Segmento 6: TEST impulsi ballerino
+	0	0	0	0	0	E3.3	E       3.3	BOOL	Ballerino a riposo
+	0	0	0	0	0	M12.0	M      12.0	BOOL	SEQ. FORM. BAL. / Uscita completa pressa orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M150.0	M     150.0	BOOL	TEST impulsi ballerino
+	0	0	0	0	0	M200.0	M     200.0	BOOL	Fronte
+	0	0	0	0	0	MW110	MW    110	INT	Conteggio impulsi ballerino
+
+Segmento 7: Allarme - Rottura o fine film
+	0	0	0	0	0	PARAMETRI	DB      3	DB      3	Parametri da pannello operatore
+	0	0	0	0	0	ALLARMI	DB     30	DB     30	Allarmi macchina
+	0	0	0	0	0	M12.0	M      12.0	BOOL	SEQ. FORM. BAL. / Uscita completa pressa orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M150.0	M     150.0	BOOL	TEST impulsi ballerino
+	0	0	0	0	0	MW110	MW    110	INT	Conteggio impulsi ballerino
+
+Segmento 8: 
+Segmento 9: HMI - Segnalazioni - Resistenze accese
+	0	0	0	0	0	A8.2	A       8.2	BOOL	Resistenze
+	0	0	0	0	0	PLC -> HMI	DB     11	DB     11	Segnali da PLC a pannello operatore

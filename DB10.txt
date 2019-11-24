@@ -1,0 +1,36 @@
+					STRUCT
+HMI_001				BOOL		FALSE		HMI - Avvio centralina idraulica
+HMI_002				BOOL		FALSE		HMI - RESET ALLARMI
+HMI_003				BOOL		FALSE		HMI - RESET CICLO
+HMI_004				BOOL		FALSE		HMI - Manuali - Pressa orizzonatale - Avanti
+HMI_005				BOOL		FALSE		HMI - Manuali - Pressa orizzonatale - Indietro
+HMI_006				BOOL		FALSE		HMI - Manuali - Pressa verticale - Salita
+HMI_007				BOOL		FALSE		HMI - Manuali - Pressa verticale - Discesa
+HMI_008				BOOL		FALSE		HMI - Manuali - Ghigliottina orizzonatale - Apertura
+HMI_009				BOOL		FALSE		HMI - Manuali - Ghigliottina orizzonatale - Chiusura
+HMI_010				BOOL		FALSE		HMI - Manuali - Ghigliottina verticale - Apertura
+HMI_011				BOOL		FALSE		HMI - Manuali - Ghigliottina verticale - Chiusura
+HMI_012				BOOL		FALSE		HMI - Manuali - Portine - Apertura
+HMI_013				BOOL		FALSE		HMI - Manuali - Portine - Chiusura
+HMI_014				BOOL		FALSE		HMI - Manuali - Foratore verticale - Salita
+HMI_015				BOOL		FALSE		HMI - Manuali - Foratore verticale - Discesa
+HMI_016				BOOL		FALSE		HMI - Manuali - Svolgitore film
+HMI_017				BOOL		FALSE		HMI - Manuali - Saldante longitudinale
+HMI_018				BOOL		FALSE		HMI - 
+HMI_019				BOOL		FALSE		HMI - Manuali - Pressino trasversale
+HMI_020				BOOL		FALSE		HMI - 
+HMI_021				BOOL		FALSE		HMI - Manuali - Taglierina e saldante
+HMI_022				BOOL		FALSE		HMI - 
+HMI_023				BOOL		FALSE		HMI - Manuali - Soffio
+HMI_024				BOOL		FALSE		HMI - 
+HMI_025				BOOL		FALSE		HMI - Manuali - Foratori orizzontali
+HMI_026				BOOL		FALSE		HMI - 
+HMI_027				BOOL		FALSE		HMI - Manuali - Espulsore balla
+HMI_028				BOOL		FALSE		HMI - 
+HMI_029				BOOL		FALSE		HMI - Manuali - Nastro esterno
+HMI_030				BOOL		FALSE		HMI - Accensione resistenze
+HMI_031				BOOL		FALSE		HMI - Abilitazione nastro esterno
+HMI_032				BOOL		FALSE		HMI - Forzatura bilancia
+HMI_033				BOOL		FALSE		HMI - Ciclo - saldatura longitudinale
+HMI_034				BOOL		FALSE		HMI - Ciclo - saldatura trasversale
+					END_STRUCT

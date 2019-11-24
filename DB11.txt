@@ -1,0 +1,6 @@
+					STRUCT
+HMI_01				BOOL		FALSE		HMI - Segnal. - Allarme (rossa)
+HMI_02				BOOL		FALSE		HMI - Segnal. - Marcia Automatico (Verde)
+HMI_03				BOOL		FALSE		HMI - Segnal. - Centralina idr. avviata
+HMI_04				BOOL		FALSE		HMI - Segnal. - Resistenze accese
+HMI_05				BOOL		FALSE		HMI - Segnal. - Ciclo azzerato

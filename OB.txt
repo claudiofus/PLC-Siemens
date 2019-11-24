@@ -1,0 +1,20 @@
+OB1:  "Main Program Sweep (Cycle)"
+Segmento 1: Sempre OFF
+      U     "M1.0"
+      R     "M1.0"
+
+Segmento 2: Sempre ON
+      UN    "M1.1"
+      S     "M1.1"
+
+Segmento 3: Sotto-programmi
+      CALL  "AUSILIARI"					FC1		-- Gestione ausiliari
+      CALL  "SEQ FORM BAL"				FC2		-- Sequenze formazione balletta
+      CALL  "SEQ RIEMP PROD"			FC3		-- Sequenze riempimento prodotto in vasca
+      CALL  "SEQ SALD LONG"				FC4		-- Sequenze di saldatura longitudinale
+      CALL  "SEQ SALD TRASV"			FC5		-- Sequenze di saldatura trasversale
+      CALL  "SEQ ESP BALLA"				FC6		-- Sequenze esplusione balla
+      CALL  "GESTIONE MACCHINA"			FC7		-- Gestione funzionamento macchina
+      CALL  "SEMIAUTOMATICO"			FC8		-- Gestione movimentazioni semi automatici
+      CALL  "C.DI USCITE PLC"			FC9		-- Comandi uscite PLC
+      CALL  "GESTIONE ALLARMI"			FC10	-- Gestione Allarmi macchina

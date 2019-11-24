@@ -1,0 +1,34 @@
+M     10.0	"M10.0"	SEQ. FORM. BAL. / Impostazione parametri	BOOL		
+M     10.1	"M10.1"	SEQ. FORM. BAL. / Verifica pressa orizz. a riposo	BOOL		
+M     10.2	"M10.2"	SEQ. FORM. BAL. / Verifica portine chiiuse	BOOL		
+M     10.3	"M10.3"	SEQ. FORM. BAL. / Richiesta riempimento prodotto (->)	BOOL		
+M     10.4	"M10.4"	SEQ. FORM. BAL. / Chiusura ghigliottina vert.	BOOL		
+M     10.5	"M10.5"	SEQ. FORM. BAL. / Apertura ghigliottina orizz.	BOOL		
+M     10.6	"M10.6"	SEQ. FORM. BAL. / Discesa pressa vert.	BOOL		
+M     10.7	"M10.7"	SEQ. FORM. BAL. / Verifica prodotto pronto (<-)	BOOL		
+M     11.0	"M11.0"	SEQ. FORM. BAL. / Apertura portine	BOOL		
+M     11.1	"M11.1"	SEQ. FORM. BAL. / Attesa scarico prodotto	BOOL		
+M     11.2	"M11.2"	SEQ. FORM. BAL. / Chiusura portine	BOOL		
+M     11.3	"M11.3"	SEQ. FORM. BAL. / Richiesta riempimento prodotto (->)	BOOL		
+M     11.4	"M11.4"	SEQ. FORM. BAL. / Chiusura ghigliottina orizz.	BOOL		
+M     11.5	"M11.5"	SEQ. FORM. BAL. / Salita pressa vert.	BOOL		
+M     11.6	"M11.6"	SEQ. FORM. BAL. / Pressa orizz. - Pressatura	BOOL		
+M     11.7	"M11.7"	SEQ. FORM. BAL. / Apertura ghigliottina vert.	BOOL		
+M     12.0	"M12.0"	SEQ. FORM. BAL. / Uscita completa pressa orizz.	BOOL		
+M     12.1	"M12.1"	SEQ. FORM. BAL. / Richiesta saldatura longitudinale (->)	BOOL		
+M     12.2	"M12.2"	SEQ. FORM. BAL. / Discesa foratore vert.	BOOL		
+M     12.3	"M12.3"	SEQ. FORM. BAL. / Verifica fine saldatura L (<-)	BOOL		
+M     12.4	"M12.4"	SEQ. FORM. BAL. / Pressa orizz. fuori ingombro	BOOL		
+M     12.5	"M12.5"	SEQ. FORM. BAL. / Richiesta saldatura trasversale (->)	BOOL		
+M     12.6	"M12.6"	SEQ. FORM. BAL. / Attesa a tempo	BOOL		
+M     12.7	"M12.7"	SEQ. FORM. BAL. / Uscita foratori laterali	BOOL		
+M     13.0	"M13.0"	SEQ. FORM. BAL. / Rientro foratori laterali	BOOL		
+M     13.1	"M13.1"	SEQ. FORM. BAL. / Salita foratore vert.	BOOL		
+M     13.2	"M13.2"	SEQ. FORM. BAL. / Verifica fine saldatura T (<-)	BOOL		
+M     13.3	"M13.3"	SEQ. FORM. BAL. / Rientro pressa orizz.	BOOL		
+M     13.4	"M13.4"	SEQ. FORM. BAL. / Richiesta espulsione balla (->)	BOOL		
+M     13.5	"M13.5"	SEQ. FORM. BAL. / Passo libero	BOOL		
+M     13.6	"M13.6"	SEQ. FORM. BAL. / Aggiornamento dati	BOOL		
+M     13.7	"M13.7"	SEQ. FORM. BAL. / Passo libero	BOOL		
+					
+MW    80	"MW80"	Contatore ballette	DEC		

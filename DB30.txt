@@ -1,0 +1,34 @@
+					STRUCT
+ALLARME_01			BOOL		FALSE		Allarme - Rottura o fine film
+ALLARME_02			BOOL		FALSE		Allarme - Macchina in EMERGENZA					
+ALLARME_03			BOOL		FALSE		Allarme - Termico motore centralina idrauica
+ALLARME_04			BOOL		FALSE		Allarme - Termico motore svolgitore film					
+ALLARME_05			BOOL		FALSE		Allarme - Riposizionare la macchina per inizio ciclo
+ALLARME_06			BOOL		FALSE		Allarme - 
+ALLARME_07			BOOL		FALSE		Allarme - 				
+ALLARME_08			BOOL		FALSE		Allarme - 					
+ALLARME_09			BOOL		FALSE		Allarme - Guasto sensori - Pressa orizzontale
+ALLARME_10			BOOL		FALSE		Allarme - Guasto sensori - Pressa verticale
+ALLARME_11			BOOL		FALSE		Allarme - Guasto sensori - Portine
+ALLARME_12			BOOL		FALSE		Allarme - Guasto sensori - Ghigliottina orizzontale
+ALLARME_13			BOOL		FALSE		Allarme - Guasto sensori - Ghigliottina verticale
+ALLARME_14			BOOL		FALSE		Allarme - Guasto sensori - Foratore verticale
+ALLARME_15			BOOL		FALSE		Allarme - Guasto sensori - Saldante longitudinale
+ALLARME_16			BOOL		FALSE		Allarme - Guasto sensori - Pressino trasv. superiore
+ALLARME_17			BOOL		FALSE		Allarme - Guasto sensori - Pressino trasv. inferiore
+ALLARME_18			BOOL		FALSE		Allarme - Guasto sensori - Foratore laterale DX
+ALLARME_19			BOOL		FALSE		Allarme - Guasto sensori - Foratore laterale SX
+ALLARME_20			BOOL		FALSE		Allarme - Guasto sensori - Espulsore balla
+ALLARME_21			BOOL		FALSE		Allarme - Timeout centralina idraulica
+ALLARME_22			BOOL		FALSE		Allarme - Timeout pressa orizzontale
+ALLARME_23			BOOL		FALSE		Allarme - Timeout pressa verticale
+ALLARME_24			BOOL		FALSE		Allarme - Timeout portine
+ALLARME_25			BOOL		FALSE		Allarme - Timeout ghigliottina orizzontale
+ALLARME_26			BOOL		FALSE		Allarme - Timeout ghigliottina verticale
+ALLARME_27			BOOL		FALSE		Allarme - Timeout foratore verticale
+ALLARME_28			BOOL		FALSE		Allarme - Timeout saldante longitudinale
+ALLARME_29			BOOL		FALSE		Allarme - Timeout pressino trasversale
+ALLARME_30			BOOL		FALSE		Allarme - Timeout foratori laterali
+ALLARME_31			BOOL		FALSE		Allarme - Timeout espulsore balla
+ALLARME_32			BOOL		FALSE		Allarme - Timeout nastro esterno
+					END_STRUCT

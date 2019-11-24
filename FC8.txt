@@ -1,0 +1,24 @@
+FC8:
+Segmento 1: Reset Ciclo
+	0	0	0	0	0	M50.0	M      50.0	BOOL	SEQ. ESP. BALLA / Verifica richiesta espulsione balla (<-)
+	0	0	0	0	0	M100.3	M     100.3	BOOL	RESET Ciclo
+	0	0	0	0	0	MB50	MB     50	BYTE	SEQUENZE ESPULSIONE BALLA
+
+Segmento 2: 
+Segmento 3: RICHIESTA ESPULSIONE BALLA
+	0	0	0	0	0	M15.3	M      15.3	BOOL	RICHIESTA ESPULSIONE BALLA
+	0	0	0	0	0	M50.0	M      50.0	BOOL	SEQ. ESP. BALLA / Verifica richiesta espulsione balla (<-)
+	0	0	0	0	0	M50.1	M      50.1	BOOL	SEQ. ESP. BALLA / Uscita espulsore balla
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 4: SEQ. ESP. BALLA / Uscita espulsore balla
+	0	0	0	0	0	E3.1	E       3.1	BOOL	Espulsore balla - Avanti
+	0	0	0	0	0	M50.1	M      50.1	BOOL	SEQ. ESP. BALLA / Uscita espulsore balla
+	0	0	0	0	0	M50.2	M      50.2	BOOL	SEQ. ESP. BALLA / Rientro espulsore balla
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 5: SEQ. ESP. BALLA / Rientro espulsore balla
+	0	0	0	0	0	E3.2	E       3.2	BOOL	Espulsore balla - Riposo
+	0	0	0	0	0	M50.0	M      50.0	BOOL	SEQ. ESP. BALLA / Verifica richiesta espulsione balla (<-)
+	0	0	0	0	0	M50.2	M      50.2	BOOL	SEQ. ESP. BALLA / Rientro espulsore balla
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA

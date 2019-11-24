@@ -1,0 +1,8 @@
+E      0.5	"E0.5"	Pressa verticale - Alta	BOOL		
+E      0.6	"E0.6"	Pressa verticale - Bassa	BOOL		
+					
+					
+E      2.2	"E2.2"	Pressino trasversale sup. - Riposo	BOOL		
+E      2.1	"E2.1"	Pressino trasversale sup. - Pressatura	BOOL		
+E      2.3	"E2.3"	Pressino trasversale inf. - Pressatura	BOOL		
+E      2.4	"E2.4"	Pressino trasversale inf. - Riposo	BOOL		

@@ -1,0 +1,56 @@
+FC9:
+Segmento 1: Ciclo di saldatura logitudinale
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E2.0	E       2.0	BOOL	Saldante longitudinale - Riposo
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	M102.0	M     102.0	BOOL	Fase - Saldatura longitudinale
+	0	0	0	0	0	T30	T      30	TIMER	Timer
+
+Segmento 2: Semi automatico - Saldante longitudinale
+	0	0	0	0	0	M102.0	M     102.0	BOOL	Fase - Saldatura longitudinale
+	0	0	0	0	0	M102.1	M     102.1	BOOL	Semi automatico - Saldante longitudinale
+	0	0	0	0	0	T30	T      30	TIMER	Timer
+
+Segmento 3: 
+Segmento 4: Fase - Attiva pressino
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	M103.0	M     103.0	BOOL	Fase - Attiva pressino
+
+Segmento 5: Timer
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	E2.1	E       2.1	BOOL	Pressino trasversale sup. - Pressatura
+	0	0	0	0	0	E2.2	E       2.2	BOOL	Pressino trasversale sup. - Riposo
+	0	0	0	0	0	E2.3	E       2.3	BOOL	Pressino trasversale inf. - Pressatura
+	0	0	0	0	0	E2.4	E       2.4	BOOL	Pressino trasversale inf. - Riposo
+	0	0	0	0	0	M1.1	M       1.1	BOOL	Sempre ON
+	0	0	0	0	0	M103.0	M     103.0	BOOL	Fase - Attiva pressino
+	0	0	0	0	0	M103.1	M     103.1	BOOL	Fase - Taglio film e saldatura
+	0	0	0	0	0	T31	T      31	TIMER	Timer
+
+Segmento 6: Timer
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	M103.1	M     103.1	BOOL	Fase - Taglio film e saldatura
+	0	0	0	0	0	M103.2	M     103.2	BOOL	Fase - Disattiva saldatura e pressino
+	0	0	0	0	0	T32	T      32	TIMER	Timer
+
+Segmento 7: Fase - Soffio
+	0	0	0	0	0	E2.2	E       2.2	BOOL	Pressino trasversale sup. - Riposo
+	0	0	0	0	0	E2.4	E       2.4	BOOL	Pressino trasversale inf. - Riposo
+	0	0	0	0	0	M103.2	M     103.2	BOOL	Fase - Disattiva saldatura e pressino
+	0	0	0	0	0	M103.3	M     103.3	BOOL	Fase - Soffio
+
+Segmento 8: Semi automatico - Pressino
+	0	0	0	0	0	M103.0	M     103.0	BOOL	Fase - Attiva pressino
+	0	0	0	0	0	M103.2	M     103.2	BOOL	Fase - Disattiva saldatura e pressino
+	0	0	0	0	0	M103.4	M     103.4	BOOL	Semi automatico - Pressino
+
+Segmento 9: Semi automatico - Taglio film e saldante
+	0	0	0	0	0	M103.1	M     103.1	BOOL	Fase - Taglio film e saldatura
+	0	0	0	0	0	M103.2	M     103.2	BOOL	Fase - Disattiva saldatura e pressino
+	0	0	0	0	0	M103.5	M     103.5	BOOL	Semi automatico - Taglio film e saldante
+
+Segmento 10: Semi automatico - Soffio
+	0	0	0	0	0	M103.3	M     103.3	BOOL	Fase - Soffio
+	0	0	0	0	0	M103.6	M     103.6	BOOL	Semi automatico - Soffio

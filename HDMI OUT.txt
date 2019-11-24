@@ -1,0 +1,208 @@
+DATA_BLOCK "HMI -> PLC"
+TITLE =
+VERSION : 0.1
+
+
+  STRUCT 	
+   HMI_001 : BOOL ;	//HMI - Pulsante Avvio centralina idraulica
+   HMI_002 : BOOL ;	//HMI - Pulsante Arresto centralina idraulica
+   HMI_003 : BOOL ;	//HMI - Pulsante RESET CICLO
+   HMI_004 : BOOL ;	//HMI - Manuali - Pressa orizzonatale - Avanti
+   HMI_005 : BOOL ;	//HMI - Manuali - Pressa orizzonatale - Indietro
+   HMI_006 : BOOL ;	//HMI - Manuali - Pressa verticale - Salita
+   HMI_007 : BOOL ;	//HMI - Manuali - Pressa verticale - Discesa
+   HMI_008 : BOOL ;	//HMI - Manuali - Ghigliottina orizzonatale - Apertura
+   HMI_009 : BOOL ;	//HMI - Manuali - Ghigliottina orizzonatale - Chiusura
+   HMI_010 : BOOL ;	//HMI - Manuali - Ghigliottina verticale - Apertura
+   HMI_011 : BOOL ;	//HMI - Manuali - Ghigliottina verticale - Chiusura
+   HMI_012 : BOOL ;	//HMI - Manuali - Portine - Apertura
+   HMI_013 : BOOL ;	//HMI - Manuali - Portine - Chiusura
+   HMI_014 : BOOL ;	//HMI - Manuali - Foratore verticale - Salita
+   HMI_015 : BOOL ;	//HMI - Manuali - Foratore verticale - Discesa
+   HMI_016 : BOOL ;	//HMI - Manuali - Svolgitore film - Start
+   HMI_017 : BOOL ;	//HMI - Manuali - Saldante longitudinale - Start
+   HMI_018 : BOOL ;	//HMI - Manuali - Saldante longitudinale - Stop
+   HMI_019 : BOOL ;	//HMI - Manuali - Saldanti trasversali - Start
+   HMI_020 : BOOL ;	//HMI - Manuali - Saldanti trasversali - Stop
+   HMI_021 : BOOL ;	//HMI - Manuali - Taglierina - Start
+   HMI_022 : BOOL ;	//HMI - Manuali - Taglierina - Stop
+   HMI_023 : BOOL ;	//HMI - Manuali - Soffio - Start
+   HMI_024 : BOOL ;	//HMI - Manuali - Soffio - Stop
+   HMI_025 : BOOL ;	//HMI - Manuali - Foratori orizzontali - Start
+   HMI_026 : BOOL ;	//HMI - Manuali - Foratori orizzontali - Stop
+   HMI_027 : BOOL ;	//HMI - Manuali - Espulsore prodotto - Start
+   HMI_028 : BOOL ;	//HMI - Manuali - Espulsore prodotto - Stop
+   HMI_029 : BOOL ;	//HMI - 
+   HMI_030 : BOOL ;	//HMI - 
+   HMI_031 : BOOL ;	//HMI - 
+   HMI_032 : BOOL ;	//HMI - 
+   HMI_033 : BOOL ;	//HMI - 
+   HMI_034 : BOOL ;	//HMI - 
+   HMI_035 : BOOL ;	//HMI - 
+   HMI_036 : BOOL ;	//HMI - 
+   HMI_037 : BOOL ;	//HMI - 
+   HMI_038 : BOOL ;	//HMI - 
+   HMI_039 : BOOL ;	//HMI - 
+   HMI_040 : BOOL ;	//HMI - 
+   HMI_041 : BOOL ;	//HMI - 
+   HMI_042 : BOOL ;	//HMI - 
+   HMI_043 : BOOL ;	//HMI - 
+   HMI_044 : BOOL ;	//HMI - 
+   HMI_045 : BOOL ;	//HMI - 
+   HMI_046 : BOOL ;	//HMI - 
+   HMI_047 : BOOL ;	//HMI - 
+   HMI_048 : BOOL ;	//HMI - 
+   HMI_049 : BOOL ;	//HMI - 
+   HMI_050 : BOOL ;	//HMI - 
+   HMI_051 : BOOL ;	//HMI - 
+   HMI_052 : BOOL ;	//HMI - 
+   HMI_053 : BOOL ;	//HMI - 
+   HMI_054 : BOOL ;	//HMI - 
+   HMI_055 : BOOL ;	//HMI - 
+   HMI_056 : BOOL ;	//HMI - 
+   HMI_057 : BOOL ;	//HMI - 
+   HMI_058 : BOOL ;	//HMI - 
+   HMI_059 : BOOL ;	//HMI - 
+   HMI_060 : BOOL ;	//HMI - 
+   HMI_061 : BOOL ;	//HMI - 
+   HMI_062 : BOOL ;	//HMI - 
+   HMI_063 : BOOL ;	//HMI - 
+   HMI_064 : BOOL ;	//HMI - 
+   HMI_065 : BOOL ;	//HMI - 
+   HMI_066 : BOOL ;	//HMI - 
+   HMI_067 : BOOL ;	//HMI - 
+   HMI_068 : BOOL ;	//HMI - 
+   HMI_069 : BOOL ;	//HMI - 
+   HMI_070 : BOOL ;	//HMI - 
+   HMI_071 : BOOL ;	//HMI - 
+   HMI_072 : BOOL ;	//HMI - 
+   HMI_073 : BOOL ;	//HMI - 
+   HMI_074 : BOOL ;	//HMI - 
+   HMI_075 : BOOL ;	//HMI - 
+   HMI_076 : BOOL ;	//HMI - 
+   HMI_077 : BOOL ;	//HMI - 
+   HMI_078 : BOOL ;	//HMI - 
+   HMI_079 : BOOL ;	//HMI - 
+   HMI_080 : BOOL ;	//HMI - 
+   HMI_081 : BOOL ;	//HMI - 
+   HMI_082 : BOOL ;	//HMI - 
+   HMI_083 : BOOL ;	//HMI - 
+   HMI_084 : BOOL ;	//HMI - 
+   HMI_085 : BOOL ;	//HMI - 
+   HMI_086 : BOOL ;	//HMI - 
+   HMI_087 : BOOL ;	//HMI - 
+   HMI_088 : BOOL ;	//HMI - 
+   HMI_089 : BOOL ;	//HMI - 
+   HMI_090 : BOOL ;	//HMI - 
+   HMI_091 : BOOL ;	//HMI - 
+   HMI_092 : BOOL ;	//HMI - 
+   HMI_093 : BOOL ;	//HMI - 
+   HMI_094 : BOOL ;	//HMI - 
+   HMI_095 : BOOL ;	//HMI - 
+   HMI_096 : BOOL ;	//HMI - 
+   HMI_097 : BOOL ;	//HMI - 
+   HMI_098 : BOOL ;	//HMI - 
+   HMI_099 : BOOL ;	//HMI - 
+  END_STRUCT ;	
+BEGIN
+   HMI_001 := FALSE; 
+   HMI_002 := FALSE; 
+   HMI_003 := FALSE; 
+   HMI_004 := FALSE; 
+   HMI_005 := FALSE; 
+   HMI_006 := FALSE; 
+   HMI_007 := FALSE; 
+   HMI_008 := FALSE; 
+   HMI_009 := FALSE; 
+   HMI_010 := FALSE; 
+   HMI_011 := FALSE; 
+   HMI_012 := FALSE; 
+   HMI_013 := FALSE; 
+   HMI_014 := FALSE; 
+   HMI_015 := FALSE; 
+   HMI_016 := FALSE; 
+   HMI_017 := FALSE; 
+   HMI_018 := FALSE; 
+   HMI_019 := FALSE; 
+   HMI_020 := FALSE; 
+   HMI_021 := FALSE; 
+   HMI_022 := FALSE; 
+   HMI_023 := FALSE; 
+   HMI_024 := FALSE; 
+   HMI_025 := FALSE; 
+   HMI_026 := FALSE; 
+   HMI_027 := FALSE; 
+   HMI_028 := FALSE; 
+   HMI_029 := FALSE; 
+   HMI_030 := FALSE; 
+   HMI_031 := FALSE; 
+   HMI_032 := FALSE; 
+   HMI_033 := FALSE; 
+   HMI_034 := FALSE; 
+   HMI_035 := FALSE; 
+   HMI_036 := FALSE; 
+   HMI_037 := FALSE; 
+   HMI_038 := FALSE; 
+   HMI_039 := FALSE; 
+   HMI_040 := FALSE; 
+   HMI_041 := FALSE; 
+   HMI_042 := FALSE; 
+   HMI_043 := FALSE; 
+   HMI_044 := FALSE; 
+   HMI_045 := FALSE; 
+   HMI_046 := FALSE; 
+   HMI_047 := FALSE; 
+   HMI_048 := FALSE; 
+   HMI_049 := FALSE; 
+   HMI_050 := FALSE; 
+   HMI_051 := FALSE; 
+   HMI_052 := FALSE; 
+   HMI_053 := FALSE; 
+   HMI_054 := FALSE; 
+   HMI_055 := FALSE; 
+   HMI_056 := FALSE; 
+   HMI_057 := FALSE; 
+   HMI_058 := FALSE; 
+   HMI_059 := FALSE; 
+   HMI_060 := FALSE; 
+   HMI_061 := FALSE; 
+   HMI_062 := FALSE; 
+   HMI_063 := FALSE; 
+   HMI_064 := FALSE; 
+   HMI_065 := FALSE; 
+   HMI_066 := FALSE; 
+   HMI_067 := FALSE; 
+   HMI_068 := FALSE; 
+   HMI_069 := FALSE; 
+   HMI_070 := FALSE; 
+   HMI_071 := FALSE; 
+   HMI_072 := FALSE; 
+   HMI_073 := FALSE; 
+   HMI_074 := FALSE; 
+   HMI_075 := FALSE; 
+   HMI_076 := FALSE; 
+   HMI_077 := FALSE; 
+   HMI_078 := FALSE; 
+   HMI_079 := FALSE; 
+   HMI_080 := FALSE; 
+   HMI_081 := FALSE; 
+   HMI_082 := FALSE; 
+   HMI_083 := FALSE; 
+   HMI_084 := FALSE; 
+   HMI_085 := FALSE; 
+   HMI_086 := FALSE; 
+   HMI_087 := FALSE; 
+   HMI_088 := FALSE; 
+   HMI_089 := FALSE; 
+   HMI_090 := FALSE; 
+   HMI_091 := FALSE; 
+   HMI_092 := FALSE; 
+   HMI_093 := FALSE; 
+   HMI_094 := FALSE; 
+   HMI_095 := FALSE; 
+   HMI_096 := FALSE; 
+   HMI_097 := FALSE; 
+   HMI_098 := FALSE; 
+   HMI_099 := FALSE; 
+END_DATA_BLOCK
+

@@ -1,0 +1,67 @@
+FC1:
+Segmento 1: ABILITAZIONI MANUALI
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+	0	0	0	0	0	E4.0	E       4.0	BOOL	KA 24V OK (Emergenza OK)
+	0	0	0	0	0	E3.7	E       3.7	BOOL	Selettore Automatico
+	0	0	0	0	0	A8.0	A       8.0	BOOL	Motore centralina idraulica
+
+Segmento 2: ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	E3.7	E       3.7	BOOL	Selettore Automatico
+	0	0	0	0	0	E4.0	E       4.0	BOOL	KA 24V OK (Emergenza OK)
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+
+Segmento 3: ABILITAZIONE MARCIA
+	0	0	0	0	0	A8.0	A       8.0	BOOL	Motore centralina idraulica
+	0	0	0	0	0	E3.6	E       3.6	BOOL	Pulsante Arresto
+	0	0	0	0	0	E3.7	E       3.7	BOOL	Selettore Automatico
+	0	0	0	0	0	E4.0	E       4.0	BOOL	KA 24V OK (Emergenza OK)
+	0	0	0	0	0	M100.1	M     100.1	BOOL	ABILITAZIONE MARCIA
+	0	0	0	0	0	M100.5	M     100.5	BOOL	ALLARMI PRESENTI
+
+Segmento 4: Avviamento
+	0	0	0	0	0	E3.5	E       3.5	BOOL	Pulsante Marcia
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.1	M     100.1	BOOL	ABILITAZIONE MARCIA
+	0	0	0	0	0	M100.2	M     100.2	BOOL	Avviamento Macchina
+	0	0	0	0	0	T0	T       0	TIMER	Preavviso marcia
+
+Segmento 5: MARCIA
+	0	0	0	0	0	E3.5	E       3.5	BOOL	Pulsante Marcia
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.1	M     100.1	BOOL	ABILITAZIONE MARCIA
+	0	0	0	0	0	T0	T       0	TIMER	Preavviso marcia
+
+Segmento 6: HMI - RESET CICLO
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E3.7	E       3.7	BOOL	Selettore Automatico
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 7: RESET Ciclo
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	PLC -> HMI	DB     11	DB     11	Segnali da PLC a pannello operatore
+	0	0	0	0	0	E3.7	E       3.7	BOOL	Selettore Automatico
+	0	0	0	0	0	M1.0	M       1.0	BOOL	Sempre OFF
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.3	M     100.3	BOOL	RESET Ciclo
+
+Segmento 8:
+
+Segmento 9: Avvisatore acustico
+	0	0	0	0	0	A11.2	A      11.2	BOOL	Avvisatore acustico
+	0	0	0	0	0	M0.5	M       0.5	BOOL	Clock 1s
+	0	0	0	0	0	M100.2	M     100.2	BOOL	Avviamento Macchina
+	0	0	0	0	0	M100.5	M     100.5	BOOL	ALLARMI PRESENTI
+	0	0	0	0	0	M100.6	M     100.6	BOOL	Tacita allarme
+
+Segmento 10: Semaforo verde
+	0	0	0	0	0	A11.0	A      11.0	BOOL	Semaforo Verde
+	0	0	0	0	0	PLC -> HMI	DB     11	DB     11	Segnali da PLC a pannello operatore
+	0	0	0	0	0	M0.5	M       0.5	BOOL	Clock 1s
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.2	M     100.2	BOOL	Avviamento Macchina
+
+Segmento 11: Semaforo Rosso
+	0	0	0	0	0	A11.1	A      11.1	BOOL	Semaforo Rosso
+	0	0	0	0	0	PLC -> HMI	DB     11	DB     11	Segnali da PLC a pannello operatore
+	0	0	0	0	0	M0.5	M       0.5	BOOL	Clock 1s
+	0	0	0	0	0	M100.5	M     100.5	BOOL	ALLARMI PRESENTI

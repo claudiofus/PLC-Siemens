@@ -1,0 +1,36 @@
+FC3:
+Segmento 1: PRODOTTO PRONTO
+	0	0	0	0	0	M20.0	M      20.0	BOOL	SEQ. RIEMP. VASCA / Verifica richiesta riempimento prodotto (<-)
+	0	0	0	0	0	M25.0	M      25.0	BOOL	PRODOTTO PRONTO
+	0	0	0	0	0	M100.3	M     100.3	BOOL	RESET Ciclo
+	0	0	0	0	0	MB20	MB     20	BYTE	SEQUENZE RIEMPIMENTO VASCA
+
+Segmento 2: SEQ. RIEMP. VASCA / Verifica richiesta riempimento prodotto (<-)
+	0	0	0	0	0	M15.0	M      15.0	BOOL	RICHIESTA RIEMPIMENTO PRODOTTO
+	0	0	0	0	0	M20.0	M      20.0	BOOL	SEQ. RIEMP. VASCA / Verifica richiesta riempimento prodotto (<-)
+	0	0	0	0	0	M20.1	M      20.1	BOOL	SEQ. RIEMP. VASCA / Verifica portine chiuse
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 3: SEQ. RIEMP. VASCA / Verifica portine chiuse
+	0	0	0	0	0	E0.7	E       0.7	BOOL	Portine - Chiuse
+	0	0	0	0	0	M20.1	M      20.1	BOOL	SEQ. RIEMP. VASCA / Verifica portine chiuse
+	0	0	0	0	0	M20.2	M      20.2	BOOL	SEQ. RIEMP. VASCA / Abilitazione nastro esterno
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 4: SEQ. RIEMP. VASCA / Abilitazione nastro esterno
+	0	0	0	0	0	M20.2	M      20.2	BOOL	SEQ. RIEMP. VASCA / Abilitazione nastro esterno
+	0	0	0	0	0	M20.3	M      20.3	BOOL	SEQ. RIEMP. VASCA / Attesa riempimento vasca
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 5: SEQ. RIEMP. VASCA / Attesa riempimento vasca
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E3.4	E       3.4	BOOL	Dosatore prodotto pieno
+	0	0	0	0	0	M20.3	M      20.3	BOOL	SEQ. RIEMP. VASCA / Attesa riempimento vasca
+	0	0	0	0	0	M20.4	M      20.4	BOOL	SEQ. RIEMP. VASCA / Prodotto pronto (->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 6: SEQ. RIEMP. VASCA / Prodotto pronto (->)
+	0	0	0	0	0	M20.0	M      20.0	BOOL	SEQ. RIEMP. VASCA / Verifica richiesta riempimento prodotto (<-)
+	0	0	0	0	0	M20.4	M      20.4	BOOL	SEQ. RIEMP. VASCA / Prodotto pronto (->)
+	0	0	0	0	0	M25.0	M      25.0	BOOL	PRODOTTO PRONTO
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA

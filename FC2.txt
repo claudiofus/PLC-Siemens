@@ -1,0 +1,235 @@
+FC2:
+Segmento 1: RESET CICLO
+	0	0	0	0	0	M10.0	M      10.0	BOOL	SEQ. FORM. BAL. / Impostazione parametri
+	0	0	0	0	0	M15.0	M      15.0	BOOL	RICHIESTA RIEMPIMENTO PRODOTTO
+	0	0	0	0	0	M15.1	M      15.1	BOOL	RICHIESTA SALDATURA LONGITUDINALE
+	0	0	0	0	0	M15.2	M      15.2	BOOL	RICHIESTA SALDATURA TRASVERSALE
+	0	0	0	0	0	M15.3	M      15.3	BOOL	RICHIESTA ESPULSIONE BALLA
+	0	0	0	0	0	M100.3	M     100.3	BOOL	RESET Ciclo
+	0	0	0	0	0	MB10	MB     10	BYTE	SEQUENZE FORMAZIONE BALLETTA
+	0	0	0	0	0	MB11	MB     11	BYTE	SEQUENZE FORMAZIONE BALLETTA
+	0	0	0	0	0	MB12	MB     12	BYTE	SEQUENZE FORMAZIONE BALLETTA
+	0	0	0	0	0	MB13	MB     13	BYTE	SEQUENZE FORMAZIONE BALLETTA
+
+Segmento 2: SEQ. FORM. BAL. / Impostazione parametri
+	0	0	0	0	0	M10.0	M      10.0	BOOL	SEQ. FORM. BAL. / Impostazione parametri
+	0	0	0	0	0	M10.1	M      10.1	BOOL	SEQ. FORM. BAL. / Verifica pressa orizz. a riposo
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 3: SEQ. FORM. BAL. / Verifica pressa orizz. a riposo
+	0	0	0	0	0	E0.0	E       0.0	BOOL	Pressa orizz. - POS 1 - Riposo
+	0	0	0	0	0	E0.1	E       0.1	BOOL	Pressa orizz. - POS 2 - Pressatura
+	0	0	0	0	0	E0.2	E       0.2	BOOL	Pressa orizz. - POS 3 - Fuori ingombro 2 saldatura
+	0	0	0	0	0	E0.3	E       0.3	BOOL	Pressa orizz. - POS 4 - Fuori ingombro 1 saldatura
+	0	0	0	0	0	E0.4	E       0.4	BOOL	Pressa orizz. - POS 5 - tutto avanti
+	0	0	0	0	0	M10.1	M      10.1	BOOL	SEQ. FORM. BAL. / Verifica pressa orizz. a riposo
+	0	0	0	0	0	M10.2	M      10.2	BOOL	SEQ. FORM. BAL. / Verifica portine chiiuse
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 4: SEQ. FORM. BAL. / Verifica portine chiuse
+	0	0	0	0	0	E0.7	E       0.7	BOOL	Portine - Chiuse
+	0	0	0	0	0	E1.0	E       1.0	BOOL	Portine - Aperte
+	0	0	0	0	0	M10.2	M      10.2	BOOL	SEQ. FORM. BAL. / Verifica portine chiiuse
+	0	0	0	0	0	M10.3	M      10.3	BOOL	SEQ. FORM. BAL. / Richiesta riempimento prodotto (->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 5: ABILITAZIONE RIEMPIMENTO PRODOTTO
+	0	0	0	0	0	M10.3	M      10.3	BOOL	SEQ. FORM. BAL. / Richiesta riempimento prodotto (->)
+	0	0	0	0	0	M10.4	M      10.4	BOOL	SEQ. FORM. BAL. / Chiusura ghigliottina vert.
+	0	0	0	0	0	M15.0	M      15.0	BOOL	RICHIESTA RIEMPIMENTO PRODOTTO
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 6: SEQ. FORM. BAL. / Chiusura ghigliottina vert.
+	0	0	0	0	0	E1.3	E       1.3	BOOL	Ghigliottina verticale - Chiusa
+	0	0	0	0	0	M10.4	M      10.4	BOOL	SEQ. FORM. BAL. / Chiusura ghigliottina vert.
+	0	0	0	0	0	M10.5	M      10.5	BOOL	SEQ. FORM. BAL. / Apertura ghigliottina orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 7: SEQ. FORM. BAL. / Apertura ghigliottina orizz.
+	0	0	0	0	0	E1.2	E       1.2	BOOL	Ghigliottina orizzontale - Aperta
+	0	0	0	0	0	M10.5	M      10.5	BOOL	SEQ. FORM. BAL. / Apertura ghigliottina orizz.
+	0	0	0	0	0	M10.6	M      10.6	BOOL	SEQ. FORM. BAL. / Discesa pressa vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 8: SEQ. FORM. BAL. / Discesa pressa vert.
+	0	0	0	0	0	E0.6	E       0.6	BOOL	Pressa verticale - Bassa
+	0	0	0	0	0	M10.6	M      10.6	BOOL	SEQ. FORM. BAL. / Discesa pressa vert.
+	0	0	0	0	0	M10.7	M      10.7	BOOL	SEQ. FORM. BAL. / Verifica prodotto pronto (<-)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 9: SEQ. FORM. BAL. / Verifica prodotto pronto (<-)
+	0	0	0	0	0	M10.7	M      10.7	BOOL	SEQ. FORM. BAL. / Verifica prodotto pronto (<-)
+	0	0	0	0	0	M11.0	M      11.0	BOOL	SEQ. FORM. BAL. / Apertura portine
+	0	0	0	0	0	M25.0	M      25.0	BOOL	PRODOTTO PRONTO
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 10: SEQ. FORM. BAL. / Apertura portine
+	0	0	0	0	0	E1.0	E       1.0	BOOL	Portine - Aperte
+	0	0	0	0	0	M11.0	M      11.0	BOOL	SEQ. FORM. BAL. / Apertura portine
+	0	0	0	0	0	M11.1	M      11.1	BOOL	SEQ. FORM. BAL. / Attesa scarico prodotto
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 11: SEQ. FORM. BAL. / Attesa scarico prodotto
+	0	0	0	0	0	M11.1	M      11.1	BOOL	SEQ. FORM. BAL. / Attesa scarico prodotto
+	0	0	0	0	0	M11.2	M      11.2	BOOL	SEQ. FORM. BAL. / Chiusura portine
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T1	T       1	TIMER	Rirtardo scarico prodotto
+
+Segmento 12: SEQ. FORM. BAL. / Chiusura portine
+	0	0	0	0	0	E0.7	E       0.7	BOOL	Portine - Chiuse
+	0	0	0	0	0	M11.2	M      11.2	BOOL	SEQ. FORM. BAL. / Chiusura portine
+	0	0	0	0	0	M11.3	M      11.3	BOOL	SEQ. FORM. BAL. / Richiesta riempimento prodotto (->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 13: SEQ. FORM. BAL. / Abilita riempimento prodotto (->)
+	0	0	0	0	0	M11.3	M      11.3	BOOL	SEQ. FORM. BAL. / Richiesta riempimento prodotto (->)
+	0	0	0	0	0	M11.4	M      11.4	BOOL	SEQ. FORM. BAL. / Chiusura ghigliottina orizz.
+	0	0	0	0	0	M15.0	M      15.0	BOOL	RICHIESTA RIEMPIMENTO PRODOTTO
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 14: SEQ. FORM. BAL. / Chiusura ghigliottina orizzontale
+	0	0	0	0	0	E1.1	E       1.1	BOOL	Ghigliottina orizzontale - Chiusa
+	0	0	0	0	0	M11.4	M      11.4	BOOL	SEQ. FORM. BAL. / Chiusura ghigliottina orizz.
+	0	0	0	0	0	M11.5	M      11.5	BOOL	SEQ. FORM. BAL. / Salita pressa vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 15: SEQ. FORM. BAL. / Salita pressa vert.
+	0	0	0	0	0	E0.5	E       0.5	BOOL	Pressa verticale - Alta
+	0	0	0	0	0	M11.5	M      11.5	BOOL	SEQ. FORM. BAL. / Salita pressa vert.
+	0	0	0	0	0	M11.6	M      11.6	BOOL	SEQ. FORM. BAL. / Pressa orizz. - Pressatura
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 16: SEQ. FORM. BAL. / Pressa orizz. - Pressatura
+	0	0	0	0	0	E0.1	E       0.1	BOOL	Pressa orizz. - POS 2 - Pressatura
+	0	0	0	0	0	M11.6	M      11.6	BOOL	SEQ. FORM. BAL. / Pressa orizz. - Pressatura
+	0	0	0	0	0	M11.7	M      11.7	BOOL	SEQ. FORM. BAL. / Apertura ghigliottina vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 17: SEQ. FORM. BAL. / Apertura ghigliottina vert.
+	0	0	0	0	0	E1.4	E       1.4	BOOL	Ghigliottina verticale - Aperta
+	0	0	0	0	0	M11.7	M      11.7	BOOL	SEQ. FORM. BAL. / Apertura ghigliottina vert.
+	0	0	0	0	0	M12.0	M      12.0	BOOL	SEQ. FORM. BAL. / Uscita completa pressa orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 18: SEQ. FORM. BAL. / Uscita pressa orizz.
+	0	0	0	0	0	E0.4	E       0.4	BOOL	Pressa orizz. - POS 5 - tutto avanti
+	0	0	0	0	0	M12.0	M      12.0	BOOL	SEQ. FORM. BAL. / Uscita completa pressa orizz.
+	0	0	0	0	0	M12.1	M      12.1	BOOL	SEQ. FORM. BAL. / Richiesta saldatura longitudinale (->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 19: SEQ. FORM. BAL. / Abilita saldatura longitudinale (->)
+	0	0	0	0	0	M12.1	M      12.1	BOOL	SEQ. FORM. BAL. / Richiesta saldatura longitudinale (->)
+	0	0	0	0	0	M12.2	M      12.2	BOOL	SEQ. FORM. BAL. / Discesa foratore vert.
+	0	0	0	0	0	M15.1	M      15.1	BOOL	RICHIESTA SALDATURA LONGITUDINALE
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 20: SEQ. FORM. BAL. / Discesa foratore vert.
+	0	0	0	0	0	E1.6	E       1.6	BOOL	Foratore vert. - Basso
+	0	0	0	0	0	M12.2	M      12.2	BOOL	SEQ. FORM. BAL. / Discesa foratore vert.
+	0	0	0	0	0	M12.3	M      12.3	BOOL	SEQ. FORM. BAL. / Verifica fine saldatura L (<-)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 21: SEQ. FORM. BAL. / Verifica fine saldatura L (<-)
+	0	0	0	0	0	M12.3	M      12.3	BOOL	SEQ. FORM. BAL. / Verifica fine saldatura L (<-)
+	0	0	0	0	0	M12.4	M      12.4	BOOL	SEQ. FORM. BAL. / Pressa orizz. fuori ingombro
+	0	0	0	0	0	M35.0	M      35.0	BOOL	FINE SALDATURA LONGITUDINALE
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 22: SEQ. FORM. BAL. / Pressa orizz. fuori ingombro
+	0	0	0	0	0	E0.2	E       0.2	BOOL	Pressa orizz. - POS 3 - Fuori ingombro 2 saldatura
+	0	0	0	0	0	E0.3	E       0.3	BOOL	Pressa orizz. - POS 4 - Fuori ingombro 1 saldatura
+	0	0	0	0	0	M1.0	M       1.0	BOOL	Sempre OFF
+	0	0	0	0	0	M1.1	M       1.1	BOOL	Sempre ON
+	0	0	0	0	0	M12.4	M      12.4	BOOL	SEQ. FORM. BAL. / Pressa orizz. fuori ingombro
+	0	0	0	0	0	M12.5	M      12.5	BOOL	SEQ. FORM. BAL. / Richiesta saldatura trasversale (->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 23: SEQ. FORM. BAL. / Abilita saldatura trasversale (->)
+	0	0	0	0	0	M12.5	M      12.5	BOOL	SEQ. FORM. BAL. / Richiesta saldatura trasversale (->)
+	0	0	0	0	0	M12.6	M      12.6	BOOL	SEQ. FORM. BAL. / Attesa a tempo
+	0	0	0	0	0	M15.2	M      15.2	BOOL	RICHIESTA SALDATURA TRASVERSALE
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 24: SEQ. FORM. BAL. / Rientro pressa orizz.
+	0	0	0	0	0	M12.6	M      12.6	BOOL	SEQ. FORM. BAL. / Attesa a tempo
+	0	0	0	0	0	M12.7	M      12.7	BOOL	SEQ. FORM. BAL. / Uscita foratori laterali
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T20	T      20	TIMER	Ritardo uscita foratori laterali
+
+Segmento 25: SEQ. FORM. BAL. / Uscita foratori laterali
+	0	0	0	0	0	E2.6	E       2.6	BOOL	Foratore DX - Riposo
+	0	0	0	0	0	E3.0	E       3.0	BOOL	Foratore SX - Riposo
+	0	0	0	0	0	M12.7	M      12.7	BOOL	SEQ. FORM. BAL. / Uscita foratori laterali
+	0	0	0	0	0	M13.0	M      13.0	BOOL	SEQ. FORM. BAL. / Rientro foratori laterali
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T21	T      21	TIMER	Ritardo rientro foratori laterali
+
+Segmento 26: SEQ. FORM. BAL. / Rientro foratori laterali
+	0	0	0	0	0	E2.6	E       2.6	BOOL	Foratore DX - Riposo
+	0	0	0	0	0	E3.0	E       3.0	BOOL	Foratore SX - Riposo
+	0	0	0	0	0	M13.0	M      13.0	BOOL	SEQ. FORM. BAL. / Rientro foratori laterali
+	0	0	0	0	0	M13.1	M      13.1	BOOL	SEQ. FORM. BAL. / Salita foratore vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 27: SEQ. FORM. BAL. / Salita foratore vert.
+	0	0	0	0	0	E1.5	E       1.5	BOOL	Foratore vert. - Alto
+	0	0	0	0	0	M13.1	M      13.1	BOOL	SEQ. FORM. BAL. / Salita foratore vert.
+	0	0	0	0	0	M13.2	M      13.2	BOOL	SEQ. FORM. BAL. / Verifica fine saldatura T (<-)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 28: SEQ. FORM. BAL. / Verifica fine saldatura T (<-)
+	0	0	0	0	0	M13.2	M      13.2	BOOL	SEQ. FORM. BAL. / Verifica fine saldatura T (<-)
+	0	0	0	0	0	M13.3	M      13.3	BOOL	SEQ. FORM. BAL. / Rientro pressa orizz.
+	0	0	0	0	0	M45.0	M      45.0	BOOL	FINE SALDATURA TRASV.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 29: SEQ. FORM. BAL. / Rientro pressa orizz.
+	0	0	0	0	0	E0.0	E       0.0	BOOL	Pressa orizz. - POS 1 - Riposo
+	0	0	0	0	0	M13.3	M      13.3	BOOL	SEQ. FORM. BAL. / Rientro pressa orizz.
+	0	0	0	0	0	M13.4	M      13.4	BOOL	SEQ. FORM. BAL. / Richiesta espulsione balla (->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 30: RICHIESTA ESPULSIONE BALLA
+	0	0	0	0	0	M13.4	M      13.4	BOOL	SEQ. FORM. BAL. / Richiesta espulsione balla (->)
+	0	0	0	0	0	M13.5	M      13.5	BOOL	SEQ. FORM. BAL. / Passo libero
+	0	0	0	0	0	M15.3	M      15.3	BOOL	RICHIESTA ESPULSIONE BALLA
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 31: SEQ. FORM. BAL. / Rientro espulsore balla
+	0	0	0	0	0	M13.5	M      13.5	BOOL	SEQ. FORM. BAL. / Passo libero
+	0	0	0	0	0	M13.6	M      13.6	BOOL	SEQ. FORM. BAL. / Aggiornamento dati
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 32: SEQ. FORM. BAL. / Aggiornamento dati
+	0	0	0	0	0	M10.4	M      10.4	BOOL	SEQ. FORM. BAL. / Chiusura ghigliottina vert.
+	0	0	0	0	0	M13.6	M      13.6	BOOL	SEQ. FORM. BAL. / Aggiornamento dati
+	0	0	0	0	0	M16.0	M      16.0	BOOL	Dati aggiornati
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 33: 
+
+Segmento 34: Ritardo scarico prodotto
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	E3.4	E       3.4	BOOL	Dosatore prodotto pieno
+	0	0	0	0	0	M11.1	M      11.1	BOOL	SEQ. FORM. BAL. / Attesa scarico prodotto
+	0	0	0	0	0	T1	T       1	TIMER	Rirtardo scarico prodotto
+
+Segmento 35: Ritardo uscita foratori laterali
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	M12.6	M      12.6	BOOL	SEQ. FORM. BAL. / Attesa a tempo
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T20	T      20	TIMER	Ritardo uscita foratori laterali
+
+Segmento 36: Ritardo rientro foratori laterali
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	E2.6	E       2.6	BOOL	Foratore DX - Riposo
+	0	0	0	0	0	E3.0	E       3.0	BOOL	Foratore SX - Riposo
+	0	0	0	0	0	M12.7	M      12.7	BOOL	SEQ. FORM. BAL. / Uscita foratori laterali
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T21	T      21	TIMER	Ritardo rientro foratori laterali
+
+Segmento 37: Dati aggiornati
+	0	0	0	0	0	M13.6	M      13.6	BOOL	SEQ. FORM. BAL. / Aggiornamento dati
+	0	0	0	0	0	M16.0	M      16.0	BOOL	Dati aggiornati
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	MW80	MW     80	INT	Contatore ballette

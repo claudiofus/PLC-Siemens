@@ -1,0 +1,206 @@
+FC7:
+Segmento 1: HMI - STOP centralina idraulica
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E4.0	E       4.0	BOOL	KA 24V OK (Emergenza OK)
+	0	0	0	0	0	E4.1	E       4.1	BOOL	Termico motore centralina idraulica
+	0	0	0	0	0	T7	T       7	TIMER	Timeout centralina idraulica
+
+Segmento 2: Motore centralina idraulica
+	0	0	0	0	0	A8.0	A       8.0	BOOL	Motore centralina idraulica
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E4.0	E       4.0	BOOL	KA 24V OK (Emergenza OK)
+	0	0	0	0	0	E4.1	E       4.1	BOOL	Termico motore centralina idraulica
+
+Segmento 3: Motore svolgitore film
+	0	0	0	0	0	A8.1	A       8.1	BOOL	Motore svolgitore film
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	T6	T       6	TIMER	Ritardo avvio svolgitore film
+
+Segmento 4: Resistenze
+	0	0	0	0	0	A8.2	A       8.2	BOOL	Resistenze
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+
+Segmento 5: Motore centralina idraulica - Stella
+	0	0	0	0	0	A8.3	A       8.3	BOOL	Motore centralina idraulica - Stella
+	0	0	0	0	0	M1.0	M       1.0	BOOL	Sempre OFF
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 6: Motore centralina idraulica - Triangolo
+	0	0	0	0	0	A8.4	A       8.4	BOOL	Motore centralina idraulica - Triangolo
+	0	0	0	0	0	M1.0	M       1.0	BOOL	Sempre OFF
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 7: Taglio film e saldante trasv.
+	0	0	0	0	0	A8.5	A       8.5	BOOL	Taglio film e saldante trasv.
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M40.2	M      40.2	BOOL	SEQ. SALD. TRASV. / Taglio film e saldatura trasv.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	M103.5	M     103.5	BOOL	Semi automatico - Taglio film e saldante
+
+Segmento 8: Pressa orizzontale - Avanti
+	0	0	0	0	0	A8.6	A       8.6	BOOL	Pressa orizzontale - Avanti
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E0.4	E       0.4	BOOL	Pressa orizz. - POS 5 - tutto avanti
+	0	0	0	0	0	E0.5	E       0.5	BOOL	Pressa verticale - Alta
+	0	0	0	0	0	E1.4	E       1.4	BOOL	Ghigliottina verticale - Aperta
+	0	0	0	0	0	E1.5	E       1.5	BOOL	Foratore vert. - Alto
+	0	0	0	0	0	E2.2	E       2.2	BOOL	Pressino trasversale sup. - Riposo
+	0	0	0	0	0	E2.4	E       2.4	BOOL	Pressino trasversale inf. - Riposo
+	0	0	0	0	0	E3.2	E       3.2	BOOL	Espulsore balla - Riposo
+	0	0	0	0	0	M11.6	M      11.6	BOOL	SEQ. FORM. BAL. / Pressa orizz. - Pressatura
+	0	0	0	0	0	M12.0	M      12.0	BOOL	SEQ. FORM. BAL. / Uscita completa pressa orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 9: Pressa orizzontale - Indietro
+	0	0	0	0	0	A8.7	A       8.7	BOOL	Pressa orizzontale - Indietro
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E0.0	E       0.0	BOOL	Pressa orizz. - POS 1 - Riposo
+	0	0	0	0	0	E0.5	E       0.5	BOOL	Pressa verticale - Alta
+	0	0	0	0	0	E1.4	E       1.4	BOOL	Ghigliottina verticale - Aperta
+	0	0	0	0	0	M12.4	M      12.4	BOOL	SEQ. FORM. BAL. / Pressa orizz. fuori ingombro
+	0	0	0	0	0	M13.3	M      13.3	BOOL	SEQ. FORM. BAL. / Rientro pressa orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 10: Pressa verticale - Alta
+	0	0	0	0	0	A9.0	A       9.0	BOOL	Pressa verticale - Salita
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E0.5	E       0.5	BOOL	Pressa verticale - Alta
+	0	0	0	0	0	M11.5	M      11.5	BOOL	SEQ. FORM. BAL. / Salita pressa vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 11: Pressa verticale - Bassa
+	0	0	0	0	0	A9.1	A       9.1	BOOL	Pressa verticale - Discesa
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E0.6	E       0.6	BOOL	Pressa verticale - Bassa
+	0	0	0	0	0	M10.6	M      10.6	BOOL	SEQ. FORM. BAL. / Discesa pressa vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 12: Portine - Apertura
+	0	0	0	0	0	A9.2	A       9.2	BOOL	Portine - Apertura
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E1.0	E       1.0	BOOL	Portine - Aperte
+	0	0	0	0	0	M11.0	M      11.0	BOOL	SEQ. FORM. BAL. / Apertura portine
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 13: Portine - Chiusura
+	0	0	0	0	0	A9.3	A       9.3	BOOL	Portine - Chiusura
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E0.7	E       0.7	BOOL	Portine - Chiuse
+	0	0	0	0	0	M11.2	M      11.2	BOOL	SEQ. FORM. BAL. / Chiusura portine
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 14: Ghigliottina orizzontale - Chiusura
+	0	0	0	0	0	A9.4	A       9.4	BOOL	Ghigliottina orizzontale - Chiusura
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E1.1	E       1.1	BOOL	Ghigliottina orizzontale - Chiusa
+	0	0	0	0	0	M11.4	M      11.4	BOOL	SEQ. FORM. BAL. / Chiusura ghigliottina orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 15: Ghigliottina orizzontale - Apertura
+	0	0	0	0	0	A9.5	A       9.5	BOOL	Ghigliottina orizzontale - Apertura
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E1.2	E       1.2	BOOL	Ghigliottina orizzontale - Aperta
+	0	0	0	0	0	M10.5	M      10.5	BOOL	SEQ. FORM. BAL. / Apertura ghigliottina orizz.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 16: Ghigliottina verticale - Chiusura
+	0	0	0	0	0	A9.6	A       9.6	BOOL	Ghigliottina verticale - Chiusura
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E0.0	E       0.0	BOOL	Pressa orizz. - POS 1 - Riposo
+	0	0	0	0	0	E0.1	E       0.1	BOOL	Pressa orizz. - POS 2 - Pressatura
+	0	0	0	0	0	E1.3	E       1.3	BOOL	Ghigliottina verticale - Chiusa
+	0	0	0	0	0	M10.4	M      10.4	BOOL	SEQ. FORM. BAL. / Chiusura ghigliottina vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 17: Ghigliottina verticale - Apertura
+	0	0	0	0	0	A9.7	A       9.7	BOOL	Ghigliottina verticale - Apertura
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E1.4	E       1.4	BOOL	Ghigliottina verticale - Aperta
+	0	0	0	0	0	M11.7	M      11.7	BOOL	SEQ. FORM. BAL. / Apertura ghigliottina vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 18: Foratore vert. - Salita
+	0	0	0	0	0	A10.0	A      10.0	BOOL	Foratore vert. - Salita
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E1.5	E       1.5	BOOL	Foratore vert. - Alto
+	0	0	0	0	0	E2.6	E       2.6	BOOL	Foratore DX - Riposo
+	0	0	0	0	0	E3.0	E       3.0	BOOL	Foratore SX - Riposo
+	0	0	0	0	0	M13.1	M      13.1	BOOL	SEQ. FORM. BAL. / Salita foratore vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 19: Foratore vert. - Discesa
+	0	0	0	0	0	A10.1	A      10.1	BOOL	Foratore vert. - Discesa
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E1.6	E       1.6	BOOL	Foratore vert. - Basso
+	0	0	0	0	0	E2.6	E       2.6	BOOL	Foratore DX - Riposo
+	0	0	0	0	0	E3.0	E       3.0	BOOL	Foratore SX - Riposo
+	0	0	0	0	0	E3.2	E       3.2	BOOL	Espulsore balla - Riposo
+	0	0	0	0	0	M12.2	M      12.2	BOOL	SEQ. FORM. BAL. / Discesa foratore vert.
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.4	M     100.4	BOOL	ABILITAZIONE MANUALI
+
+Segmento 20: Saldante longitudinale - Comando
+	0	0	0	0	0	A10.2	A      10.2	BOOL	Saldante longitudinale - Comando
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M30.1	M      30.1	BOOL	SEQ. SALD. LONG. / Attiva saldante longitudinale
+	0	0	0	0	0	M30.2	M      30.2	BOOL	SEQ. SALD. LONG. / Attesa saldatura longitudinale
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	M102.1	M     102.1	BOOL	Semi automatico - Saldante longitudinale
+
+Segmento 21: Pressino trasversale - Comando
+	0	0	0	0	0	A10.3	A      10.3	BOOL	Pressino trasversale - Comando
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M40.1	M      40.1	BOOL	SEQ. SALD. TRASV. / Attiva pressino trasver.
+	0	0	0	0	0	M40.2	M      40.2	BOOL	SEQ. SALD. TRASV. / Taglio film e saldatura trasv.
+	0	0	0	0	0	M40.3	M      40.3	BOOL	SEQ. SALD. TRASV. / Passo libero
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	M103.4	M     103.4	BOOL	Semi automatico - Pressino
+	
+Segmento 22: Foratori laterali - Comando
+	0	0	0	0	0	A10.4	A      10.4	BOOL	Foratori laterali - Comando
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M12.7	M      12.7	BOOL	SEQ. FORM. BAL. / Uscita foratori laterali
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+
+Segmento 23: Espulsione balla - Comando
+	0	0	0	0	0	A10.5	A      10.5	BOOL	Espulsione balla - Comando
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	E1.5	E       1.5	BOOL	Foratore vert. - Alto
+	0	0	0	0	0	M50.1	M      50.1	BOOL	SEQ. ESP. BALLA / Uscita espulsore balla
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+
+Segmento 24: Soffio - Comando
+	0	0	0	0	0	A10.6	A      10.6	BOOL	Soffio - Comando
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M40.5	M      40.5	BOOL	SEQ. SALD. TRASV. / Attiva soffio
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.
+	0	0	0	0	0	M103.6	M     103.6	BOOL	Semi automatico - Soffio
+
+Segmento 25: Nastro esterno - Comando
+	0	0	0	0	0	A10.7	A      10.7	BOOL	Nastro esterno - Comando
+	0	0	0	0	0	HMI -> PLC	DB     10	DB     10	Comandi da pannello operatore a PLC
+	0	0	0	0	0	M20.2	M      20.2	BOOL	SEQ. RIEMP. VASCA / Abilitazione nastro esterno
+	0	0	0	0	0	M20.3	M      20.3	BOOL	SEQ. RIEMP. VASCA / Attesa riempimento vasca
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	M100.7	M     100.7	BOOL	ABILITAZIONE MANUALI SENZA CENTRALINA IDR.

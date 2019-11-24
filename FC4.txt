@@ -1,0 +1,43 @@
+FC4:
+Segmento 1: RESET CICLO
+	0	0	0	0	0	M30.0	M      30.0	BOOL	SEQ. SALD. LONG. / Verifica richiesta di saldatura L (<-)
+	0	0	0	0	0	M35.0	M      35.0	BOOL	FINE SALDATURA LONGITUDINALE
+	0	0	0	0	0	M100.3	M     100.3	BOOL	RESET Ciclo
+	0	0	0	0	0	MB30	MB     30	BYTE	SEQUENZE SALDATURA LONGITUD.
+
+Segmento 2: SEQ. SALD. LONG. / Verifica richiesta di saldatura L (<-)
+	0	0	0	0	0	M15.1	M      15.1	BOOL	RICHIESTA SALDATURA LONGITUDINALE
+	0	0	0	0	0	M30.0	M      30.0	BOOL	SEQ. SALD. LONG. / Verifica richiesta di saldatura L (<-)
+	0	0	0	0	0	M30.1	M      30.1	BOOL	SEQ. SALD. LONG. / Attiva saldante longitudinale
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 3: SEQ. SALD. LONG. / Attiva saldante longitudinale
+	0	0	0	0	0	M30.1	M      30.1	BOOL	SEQ. SALD. LONG. / Attiva saldante longitudinale
+	0	0	0	0	0	M30.2	M      30.2	BOOL	SEQ. SALD. LONG. / Attesa saldatura longitudinale
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 4: SEQ. SALD. LONG. / Attesa saldatura longitudinale
+	0	0	0	0	0	M30.2	M      30.2	BOOL	SEQ. SALD. LONG. / Attesa saldatura longitudinale
+	0	0	0	0	0	M30.3	M      30.3	BOOL	SEQ. SALD. LONG. / Disattiva saldante longitudinale
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+	0	0	0	0	0	T2	T       2	TIMER	Tempo di saldatura logitudinale
+
+Segmento 5: SEQ. SALD. LONG. / Disattiva saldante longitudinale
+	0	0	0	0	0	E2.0	E       2.0	BOOL	Saldante longitudinale - Riposo
+	0	0	0	0	0	M30.3	M      30.3	BOOL	SEQ. SALD. LONG. / Disattiva saldante longitudinale
+	0	0	0	0	0	M30.4	M      30.4	BOOL	SEQ. SALD. LONG. / Fine saldatura longitudinale(->)
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 6: SEQ. SALD. LONG. / Fine saldatura longitudinale(->)
+	0	0	0	0	0	M30.0	M      30.0	BOOL	SEQ. SALD. LONG. / Verifica richiesta di saldatura L (<-)
+	0	0	0	0	0	M30.4	M      30.4	BOOL	SEQ. SALD. LONG. / Fine saldatura longitudinale(->)
+	0	0	0	0	0	M35.0	M      35.0	BOOL	FINE SALDATURA LONGITUDINALE
+	0	0	0	0	0	M100.0	M     100.0	BOOL	MARCIA
+
+Segmento 7: 
+
+Segmento 8: 
+	0	0	0	0	0	TEMPI	DB      2	DB      2	Tempi da pannello operatore
+	0	0	0	0	0	E2.0	E       2.0	BOOL	Saldante longitudinale - Riposo
+	0	0	0	0	0	M30.2	M      30.2	BOOL	SEQ. SALD. LONG. / Attesa saldatura longitudinale
+	0	0	0	0	0	T2	T       2	TIMER	Tempo di saldatura logitudinale
